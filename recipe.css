@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+body h1{
+    margin: 0 50px;
+    font-size: 36px;
+}
+header{
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+#recipe-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.recipe-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.container img{
+    
+    border-radius: 10px;
+
+}
+.container h2{
+    margin: 0 10px;
+    font-size: 36px;
+}
+.container h3{
+    font-weight: bold;
+    font-size: 24px;
+}
+.container a{
+    text-decoration: none;  
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #555;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.container a:hover{
+    background: #777;
+}
+#save-recipe{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #555;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#save-recipe:hover{
+    background: #777;
+}
+.container p{
+    color: #777;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 10px 0;
+    padding: 10px;
+}
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .star {
+    color: gray;
+    transition: color 0.2s;
+  }
+
+  .star:hover,
+  .star.selected {
+    color: gold;
+  }
+  #share-container h3{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    color: #333;
+    margin: 0;
+    
+}
+  #share-container{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    margin: 20px -30px;
+}
+#ingredients{
+    margin-left: 85%;
+}

@@ -1,0 +1,158 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+}
+ #search-input{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 50%;
+    width: 15%;
+}
+#save-recipe{
+   padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #555;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-left: 50%;
+    text-decoration: none;
+}
+#save-recipe:hover{
+    background: #777;
+}
+.link{
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#search-button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #555;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#search-button:hover{
+    background: #777;
+}
+h2{
+    margin: 0 50px;
+    font-size: 36px;
+   
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+#recipe-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.recipe-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.recipe-item img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.recipe-item h3{
+    margin: 0;
+    font-size: 20px;
+    padding: 10px;
+    min-width: 200px;
+
+}
+.recipe-item p{
+    margin: 0;
+    padding: 10px;
+   
+    color: #777;
+}
+.recipe-item a{
+    padding: 10px;
+    min-width: 150px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+   
+}
+.recipe-item a:hover{
+    background: #555;
+}
+
+
+
+@media screen and (max-width: 768px){
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+    #search-input, #search-button{
+        margin-left: 0;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    #save-recipe{
+        margin-left: 0;
+        width: 40%;
+        margin-bottom: 10px;
+        margin-right: 10%;
+    }
+    .container{
+        max-width: 100%;
+    }
+    .recipe-item{
+        flex-direction: column;
+    }
+    .recipe-item img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .recipe-item h2{
+        font-size: 18px;
+        padding: 0;
+        margin-bottom: 10px;
+       
+
+    }
+    .recipe-item p{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .recipe-item a{
+        width: 100%;
+        text-align: center;
+        
+    }
+    
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Recipes</title>
+    <link rel="stylesheet" href="save.css">
+</head>
+<body>
+    <header><h1>Saved Recipes</h1></header>
+
+    <div id="saved-recipes" class="container">
+        <p>Loading saved recipes...</p>
+    </div>
+
+    <a href="index.html">Back to Recipes</a>
+
+    <script>
+        function loadSavedRecipes() {
+            const savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+            const container = document.getElementById("saved-recipes");
+
+            if (savedRecipes.length === 0) {
+                container.innerHTML = "<p>No saved recipes yet.</p>";
+                return;
+            }
+
+            container.innerHTML = ""; // Clear previous content
+
+            savedRecipes.forEach(meal => {
+                const recipeEl = document.createElement("div");
+                recipeEl.classList.add("recipe-card");
+                recipeEl.innerHTML = `
+                    <img src="${meal.strMealThumb}" alt="${meal.strMeal}" width="150">
+                    <h3>${meal.strMeal}</h3>
+                    <p><strong>Category:</strong> ${meal.strCategory}</p>
+                    <a href="recipe.html?id=${meal.idMeal}">View Recipe</a>
+                    <button class="remove-recipe" data-id="${meal.idMeal}">Remove</button>
+                `;
+                container.appendChild(recipeEl);
+            });
+
+            // Add event listeners to remove buttons
+            document.querySelectorAll(".remove-recipe").forEach(button => {
+                button.addEventListener("click", (event) => {
+                    removeRecipe(event.target.dataset.id);
+                });
+            });
+        }
+
+        function removeRecipe(mealId) {
+            let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+            savedRecipes = savedRecipes.filter(meal => meal.idMeal !== mealId);
+            localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+            loadSavedRecipes(); // Reload the saved recipes list
+        }
+
+        // Load saved recipes on page load
+        loadSavedRecipes();
+    </script>
+</body>
+</html>
