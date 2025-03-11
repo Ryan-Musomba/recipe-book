@@ -50,15 +50,15 @@ body {
   
   .recipe-card-img {
     width: 100%;
-    height: 50%; /* Adjust as needed */
+    height: 50%; 
     overflow: hidden;
   }
   
-  /* Image styling */
+
   .recipe-card-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the whole area */
+    object-fit: cover; 
   }
   
   
